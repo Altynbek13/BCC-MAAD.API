@@ -13,7 +13,7 @@ namespace BCC_MAAD.API.Entities
         [Column("status")]
         public string Status { get; set; }
         [Column("age")]
-        public int Age { get; set; }
+        public int? Age { get; set; }
         [Column("city")]
         public string City { get; set; }
         [Column("avg_monthly_balance_kzt")]
