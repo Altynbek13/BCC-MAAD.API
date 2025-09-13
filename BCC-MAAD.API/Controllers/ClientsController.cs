@@ -19,7 +19,7 @@ namespace BCC_MAAD.API.Controllers
         [HttpGet("profile")]
         public async Task<IActionResult> GetProfile()
         {
-            var clientCode = int.Parse(User.FindFirst("client_code").Value);
+            var clientCode = User.FindFirst("client_code").Value;
             var profile = await _clientService.GetProfileAsync(clientCode);
             return Ok(profile);
         }
@@ -27,7 +27,7 @@ namespace BCC_MAAD.API.Controllers
         [HttpGet("balance")]
         public async Task<IActionResult> GetBalance()
         {
-            var clientCode = int.Parse(User.FindFirst("client_code").Value);
+            var clientCode = User.FindFirst("client_code").Value;
             var balance = await _clientService.GetBalanceAsync(clientCode);
             return Ok(balance);
         }

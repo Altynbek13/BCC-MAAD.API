@@ -2,7 +2,7 @@
 {
     public class LoginRequest
     {
-        public int ClientCode { get; set; }
+        public string ClientCode { get; set; }
         public string Password { get; set; }
     }
 }

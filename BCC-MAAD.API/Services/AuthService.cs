@@ -56,7 +56,7 @@ namespace BCC_MAAD.API.Services
 
         public async Task<MeResponse> GetCurrentUserAsync(ClaimsPrincipal user)
         {
-            var clientCode = int.Parse(user.FindFirst("client_code").Value);
+            var clientCode = user.FindFirst("client_code").Value;
             var client = await _context.Clients.FirstAsync(c => c.ClientCode == clientCode);
 
             return new MeResponse

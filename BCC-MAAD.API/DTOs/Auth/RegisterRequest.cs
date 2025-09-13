@@ -2,7 +2,7 @@
 {
     public class RegisterRequest
     {
-        public int ClientCode { get; set; }
+        public string ClientCode { get; set; }
         public string Name { get; set; }
         public string Status { get; set; }
         public string City { get; set; }

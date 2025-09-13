@@ -20,7 +20,7 @@ namespace BCC_MAAD.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetTransactions()
         {
-            var clientCode = int.Parse(User.FindFirst("client_code").Value);
+            var clientCode = User.FindFirst("client_code").Value;
             var txs = await _transactionService.GetTransactionsAsync(clientCode);
             return Ok(txs);
         }
@@ -28,7 +28,7 @@ namespace BCC_MAAD.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddTransaction([FromForm] TransactionDto dto)
         {
-            var clientCode = int.Parse(User.FindFirst("client_code").Value);
+            var clientCode = User.FindFirst("client_code").Value;
             await _transactionService.AddTransactionAsync(clientCode, dto);
             return Ok(new { message = "Transaction added" });
         }

@@ -13,7 +13,7 @@ namespace BCC_MAAD.API.Services
             _context = context;
         }
 
-        public async Task<List<TransactionDto>> GetTransactionsAsync(int clientCode)
+        public async Task<List<TransactionDto>> GetTransactionsAsync(string clientCode)
         {
             return await _context.Transactions
                 .AsNoTracking()
@@ -30,7 +30,7 @@ namespace BCC_MAAD.API.Services
                 .ToListAsync();
         }
 
-        public async Task AddTransactionAsync(int clientCode, TransactionDto dto)
+        public async Task AddTransactionAsync(string clientCode, TransactionDto dto)
         {
             var transaction = new Transaction
             {

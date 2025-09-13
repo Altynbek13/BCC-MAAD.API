@@ -19,7 +19,7 @@ namespace BCC_MAAD.API.Services
         {
             var claims = new[]
             {
-            new Claim("client_code", client.ClientCode.ToString()),
+            new Claim("client_code", client.ClientCode),
             new Claim(ClaimTypes.Name, client.Name)
         };
 

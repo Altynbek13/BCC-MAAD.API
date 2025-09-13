@@ -12,7 +12,7 @@ namespace BCC_MAAD.API.Services
             _context = context;
         }
 
-        public async Task<ClientProfileDto> GetProfileAsync(int clientCode)
+        public async Task<ClientProfileDto> GetProfileAsync(string clientCode)
         {
             var client = await _context.Clients
                 .AsNoTracking()
@@ -32,7 +32,7 @@ namespace BCC_MAAD.API.Services
             };
         }
 
-        public async Task<decimal> GetBalanceAsync(int clientCode)
+        public async Task<decimal> GetBalanceAsync(string clientCode)
         {
             var client = await _context.Clients
                 .AsNoTracking()
@@ -41,7 +41,7 @@ namespace BCC_MAAD.API.Services
             if (client == null)
                 throw new Exception("Клиент не найден");
 
-            return client.Balance;
+            return client.AvgMonthlyBalanceKzt;
         }
     }
 }
