@@ -77,11 +77,13 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<ITransferService, TransferService>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
